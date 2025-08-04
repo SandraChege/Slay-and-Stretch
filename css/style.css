@@ -1,0 +1,400 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.home-info {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 70vh;
+}
+/* Dark overlay for readability */
+.home-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+/* Push content above overlay */
+.home-info header,
+.home-info .hero {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+header h2 {
+  color: white;
+}
+.logo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.logo img {
+  height: 50px;
+  width: 50px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+nav a:hover {
+  color: rgb(221, 160, 221);
+  background-color: rgba(221, 160, 221, 0.2);
+}
+
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  /* background-color: rgba(128, 0, 128, 0.5); */
+  background-color: rgba(221, 160, 221, 0.5);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.cta-buttons .btn:hover {
+  background-color: rgba(221, 160, 221, 0.9);
+}
+
+.about {
+  background-color: #fff;
+  color: #333;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-heading, .activities-heading, .shopmerch-heading, .testimonial-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-heading h2, .activities-heading h2 {
+  font-size: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  max-width: 90rem; /*1300px*/
+  margin: auto;
+  text-align: left;
+}
+
+.about-text {
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-basis: 400px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about-image {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#activities .cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#activities .cards .card{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+#activities .cards .card:hover {
+  transform: translateY(-10px);
+}
+
+#activities .cards .card .card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+.card-header {
+  padding: 1.25rem;
+  background-color: rgba(221, 160, 221, 0.5);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/*SHOP OUR MERCH*/
+.merchtext{
+  display: flex;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 1530px; /* 3 cards x 300px each */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  flex: 0 0 500px;
+  margin-right: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.card-header {
+  padding: 1rem;
+  background-color: #f8f8f8;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.carousel-btn {
+  background: rgba(128, 0, 128, 0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-btn:hover {
+  background: plum;
+}
+
+/*TESTIMONIALS*/
+
+.testimonial-carousel-wrapper {
+  position: relative;
+  max-width: 1500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-carousel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  flex: 0 0 48%;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #f46ca4;
+  text-align: right;
+}
+
+/* Dots styling */
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.testimonial-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.testimonial-dots .dot.active {
+  background-color: #f46ca4;
+}
+
+.read-more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #f46ca4;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff0f7;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #f46ca4;
+}
+
+
+/* .activities {
+  padding: 2rem;
+  text-align: center;
+}
+
+.activities .cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #f8f8f8;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.newsletter {
+  background: #fef2f5;
+  padding: 2rem;
+  text-align: center;
+}
+
+.newsletter input {
+  padding: 0.5rem;
+  width: 200px;
+  margin-right: 0.5rem;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+} */
