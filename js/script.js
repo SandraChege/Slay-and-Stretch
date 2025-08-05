@@ -59,84 +59,90 @@ document.querySelector("form").addEventListener("submit", function (e) {
   //TESTIMONIALS
 
   const testimonialCarousel = document.getElementById("testimonial-carousel");
-  const testimonialDots = document.getElementById("testimonial-dots");
-  const testimonialCards = testimonialCarousel.children;
+const testimonialDots = document.getElementById("testimonial-dots");
+const testimonialCards = testimonialCarousel.children;
 
-  const testimonialsvisibleCards = 2;
-  const totalCards = testimonialCards.length;
-  const totalSlides = Math.ceil(totalCards / testimonialsvisibleCards);
-  let currentSlide = 0;
+const testimonialVisibleCards = 2;
+const totalCards = testimonialCards.length;
+const totalSlides = totalCards - 1; // for sliding 1 card at a time
+let currentSlide = 0;
 
-  // Dynamically calculate gap and card width
-  const gap = parseFloat(getComputedStyle(testimonialCarousel).gap) || 0;
-  const testimonialcardWidth = testimonialCards[0].offsetWidth + gap;
+// Fixed card width setup
+const fixedCardWidth = 550; // ✅ Card width in px (matches CSS)
+const gap = parseFloat(getComputedStyle(testimonialCarousel).gap) || 0;
+const testimonialCardWidth = fixedCardWidth + gap;
 
-  // Generate dots
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    if (i === 0) dot.classList.add("active");
-    dot.addEventListener("click", () => {
-      currentSlide = i;
-      updateCarousel();
-    });
-    testimonialDots.appendChild(dot);
-  }
+// Generate dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
 
-  const dots = testimonialDots.querySelectorAll(".dot");
+  dot.addEventListener("click", () => {
+    currentSlide = i;
+    updateCarousel();
+  });
 
-  function updateCarousel() {
-    const offset = currentSlide * (testimonialcardWidth * visibleCards);
-    testimonialCarousel.style.transform = `translateX(-${offset}px)`;
+  testimonialDots.appendChild(dot);
+}
 
-    // Update active dot
-    dots.forEach(dot => dot.classList.remove("active"));
+const dots = testimonialDots.querySelectorAll(".dot");
+
+function updateCarousel() {
+  const offset = currentSlide * testimonialCardWidth;
+  testimonialCarousel.style.transform = `translateX(-${offset}px)`;
+
+  // Update active dot
+  dots.forEach(dot => dot.classList.remove("active"));
+  if (dots[currentSlide]) {
     dots[currentSlide].classList.add("active");
   }
+}
 
-  // Auto-scroll every 30 seconds
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-  }, 30000);
+// Auto-scroll every 30 seconds
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}, 30000);
 
-  const MAX_WORDS = 50;
-  
-  const modal = document.getElementById("testimonial-modal");
-  const modalText = document.getElementById("modal-text");
-  const closeBtn = document.querySelector(".close-btn");
+// ===============================
+// Modal Logic for Read More
+// ===============================
+const MAX_WORDS = 50;
+const modal = document.getElementById("testimonial-modal");
+const modalText = document.getElementById("modal-text");
+const closeBtn = document.querySelector(".close-btn");
 
-  document.querySelectorAll(".testimonial-text").forEach(textElement => {
-    const fullText = textElement.textContent.trim();
-    const words = fullText.split(/\s+/);
+document.querySelectorAll(".testimonial-text").forEach(textElement => {
+  const fullText = textElement.textContent.trim();
+  const words = fullText.split(/\s+/);
 
-    if (words.length > MAX_WORDS) {
-      const truncated = words.slice(0, MAX_WORDS).join(" ") + "...";
-      textElement.textContent = truncated;
+  if (words.length > MAX_WORDS) {
+    const truncated = words.slice(0, MAX_WORDS).join(" ") + "...";
+    textElement.textContent = truncated;
 
-      const button = document.createElement("button");
-      button.className = "read-more-btn";
-      button.textContent = "Read More";
+    const button = document.createElement("button");
+    button.className = "read-more-btn";
+    button.textContent = "Read More";
 
-      button.addEventListener("click", () => {
-        modalText.textContent = fullText;
-        modal.style.display = "block";
-      });
+    button.addEventListener("click", () => {
+      modalText.textContent = fullText;
+      modal.style.display = "block";
+    });
 
-      // Insert before the author name
-      const parent = textElement.parentElement;
-      parent.insertBefore(button, parent.querySelector("span"));
-    }
-  });
+    const parent = textElement.parentElement;
+    parent.insertBefore(button, parent.querySelector("span"));
+  }
+});
 
-  // Close modal on click (×)
-  closeBtn.addEventListener("click", () => {
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal when clicking outside
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
     modal.style.display = "none";
-  });
-
-  // Close modal on outside click
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
+  }
+});
