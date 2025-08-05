@@ -22,46 +22,81 @@ body {
   z-index: 0;
 }
 /* Push content above overlay */
-.home-info header,
+.home-info,
 .home-info .hero {
   position: relative;
   z-index: 1;
 }
 
 header {
+  position: fixed; /* Make navbar stick */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Keep it above everything else */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 2rem;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Optional semi-transparent dark background */
+  backdrop-filter: blur(6px); /* Smooth effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
+
+/* === Site Title === */
 header h2 {
   color: white;
+  margin-left: 0.5rem;
 }
+
+/* === Logo Container === */
 .logo {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  gap: 0.75rem;
 }
+
+/* === Logo Image === */
 .logo img {
   height: 50px;
   width: 50px;
+  object-fit: contain;
 }
+
+/* === Navigation === */
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
+
+/* === Navigation Links === */
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* === Hover Effect === */
 nav a:hover {
-  color: rgb(221, 160, 221);
+  color: plum;
   background-color: rgba(221, 160, 221, 0.2);
+}
+
+/* === Add Space Below Header === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .hero {
@@ -394,12 +429,12 @@ nav a:hover {
 }
 
 .contact-form button:hover {
-  background-color: rgba(221, 160, 221,0.8);
+  background-color: rgba(221, 160, 221, 0.8);
 }
 
 /*Footer*/
 .site-footer {
-  background-color: #fef6f9;
+  background-color: rgba(128, 0, 128, 0.1);
   padding: 2rem 1rem;
   text-align: center;
 }
@@ -419,7 +454,7 @@ nav a:hover {
 }
 
 .footer-links a {
-  color: #f46ca4;
+  color: rgba(128, 0, 128, 0.7);
   text-decoration: none;
   font-weight: 500;
 }
