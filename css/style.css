@@ -78,8 +78,19 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
-    color: rgb(221, 160, 221);
-    border-bottom: 2px solid rgb(221, 160, 221);
+    color: #dda0dd;
+    border-bottom: 2px solid #dda0dd;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 1100;
 }
 
 .hero {
@@ -105,16 +116,16 @@ nav ul li a:focus {
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: rgb(221, 160, 221);
+    background: #800080;
     color: #fff;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 12px;
     text-decoration: none;
     transition: background 0.3s ease;
 }
 
 .btn:hover {
-    background: rgb(190, 130, 190);
+    background: #dda0dd;
 }
 
 /*ABOUT SECTION*/
@@ -133,6 +144,7 @@ nav ul li a:focus {
     font-size: 2rem;
     font-weight: bold;
     padding-bottom: 0.3rem;
+    color: #4a004e;
 }
 
 .about-content {
@@ -150,6 +162,11 @@ nav ul li a:focus {
     line-height: 1.8;
 }
 
+.about-text span {
+    font-weight: bold;
+    color: #800080;
+}
+
 .about-image img {
     width: 100%;
     border-radius: 10px;
@@ -159,7 +176,7 @@ nav ul li a:focus {
 /*ACTIVITIES SECTION*/
 #activities {
     padding: 4rem 2rem;
-    background: #fff;
+    background: #fafafa;
     color: #333;
 }
 
@@ -172,6 +189,7 @@ nav ul li a:focus {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #4a004e;
 }
 
 .activity-cards {
@@ -211,8 +229,8 @@ nav ul li a:focus {
     padding: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
-    background: rgba(221, 160, 221, 0.8);
-    color: #fff;
+    background: rgba(243, 214, 243, 0.2);
+    color: #800080;
 }
 
 .activity-card-header:hover {
@@ -223,13 +241,14 @@ nav ul li a:focus {
 #shop {
     padding: 50px 20px;
     text-align: center;
-    background: #fafafa;
+    background: #fff;
 }
 
 .shopmerch-heading h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #4a004e;
 }
 
 .shop-merchtext {
@@ -283,7 +302,6 @@ nav ul li a:focus {
     gap: 20px;
 }
 
-
 .shop-card {
     flex: 0 0 400px;
     background: white;
@@ -309,14 +327,86 @@ nav ul li a:focus {
     padding: 12px;
     font-size: 1.1rem;
     font-weight: 600;
-    background: #f4f4f4;
+    background: rgba(243, 214, 243, 0.2);
+    color: #800080;
 }
+
 /*EVENTS SECTION*/
+#events {
+    padding: 4rem 2rem;
+    /* max-width: 1800px; */
+    margin: auto;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#events h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #4a004e;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Events container */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event-content h3 {
+    margin: 0 0 0.5rem;
+    color: #4a004e;
+}
+
+.event-content p {
+    flex-grow: 1;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.event-date {
+    font-weight: bold;
+    color: #800080;
+}
 
 /*BLOG SECTION*/
 #blog {
     padding: 60px 20px;
-    background: #f9f9f9;
+    background: #fff;
     text-align: center;
 }
 
@@ -324,6 +414,7 @@ nav ul li a:focus {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #4a004e;
 }
 
 #blog .blog-content p {
@@ -366,7 +457,7 @@ nav ul li a:focus {
 .blog-info h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
-    color: #222;
+    color: #4a004e;
 }
 
 .blog-info p {
@@ -376,7 +467,7 @@ nav ul li a:focus {
 }
 
 .read-more {
-    color: rgb(190, 130, 190);
+    color: #800080;
     font-weight: 600;
     text-decoration: none;
     font-size: 0.95rem;
@@ -384,8 +475,249 @@ nav ul li a:focus {
 }
 
 .read-more:hover {
-    color: #d35400;
+    color: #dda0dd;
 }
+
+/*TESTIMONIAL SECTION*/
+#testimonials {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.testimonial-heading h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #4a004e;
+}
+
+.testimonial-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-carousel {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.6s ease-in-out;
+}
+
+.testimonial-card {
+    flex: 0 0 550px;
+    /* width of each card */
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.testimonial-card span {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #800080;
+    align-self: flex-end;
+}
+
+.testimonial-dots {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.testimonial-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.testimonial-dots .dot.active {
+    background: #4a004e;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    max-width: 700px;
+    width: 90%;
+    border-radius: 12px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4a004e;
+}
+
+.read-more-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #800080;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.read-more-btn:hover {
+    background: #dda0dd;
+}
+
+/*CONTACT US SECTION*/
+#contact {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-heading h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #4a004e;
+}
+
+.contact-heading p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid #800080;
+    box-shadow: 0 0 8px rgba(128, 0, 128, 0.2);
+}
+
+.contact-form button {
+    background: #800080;
+    color: #fff;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #dda0dd;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    font-weight: bold;
+    display: none;
+}
+
+input.error,
+textarea.error {
+    border: 1px solid #d9534f;
+    box-shadow: 0 0 6px rgba(217, 83, 79, 0.3);
+}
+
+/* FOOTER SECTION */
+.site-footer {
+    background: #222;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #800080;
+}
+
 
 
 
@@ -396,8 +728,40 @@ nav ul li a:focus {
     }
 
     nav ul {
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 180px;
+        padding: 1rem;
+        gap: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        border-radius: 0 0 0 12px;
+        box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    nav ul.active {
+        max-height: 500px;
+        /* expand */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background: rgba(221, 160, 221, 0.2);
+        color: plum;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .hero h1 {

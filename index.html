@@ -16,14 +16,18 @@
                 <img src="images/favicon.png" alt="Slay and Stretch Logo" />
                 <h2>Slay and Stretch</h2>
             </div>
+            <button class="menu-toggle" id="menu-toggle">
+                ☰
+            </button>
             <nav>
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#activities">Activities</a></li>
                     <li><a href="#shop">Shop</a></li>
-                    <!-- <li><a href="#blog">Blog</a></li> -->
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#events">Events</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -46,7 +50,7 @@
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    <strong>Slay and Stretch</strong> is a girl's wellness community
+                    <span>Slay and Stretch</span> is a girl's wellness community
                     blending movement, mindfulness, and sisterhood. From stretch
                     sessions and mindful walks to rope-skipping workouts, we create
                     empowering spaces for women to move their bodies, clear their minds,
@@ -158,6 +162,40 @@
         </div>
     </section>
 
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <p class="section-subtitle">Stay updated with our latest meetups, workshops, and fitness challenges!</p>
+
+        <div class="events-container">
+            <div class="event-card">
+                <img src="images/event1.jpg" alt="Yoga in the Park" />
+                <div class="event-content">
+                    <h3>Yoga in the Park</h3>
+                    <p>Join us for a relaxing yoga session under the open sky. Perfect for beginners and pros alike.</p>
+                    <span class="event-date">📅 Sept 15, 2025</span>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/event2.jpg" alt="Pilates Bootcamp" />
+                <div class="event-content">
+                    <h3>Pilates Bootcamp</h3>
+                    <p>A high-energy session designed to build strength, flexibility, and endurance.</p>
+                    <span class="event-date">📅 Oct 3, 2025</span>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/event3.jpg" alt="Community Walk" />
+                <div class="event-content">
+                    <h3>Community Walk</h3>
+                    <p>Bring your friends and family for a fun group walk while enjoying the outdoors.</p>
+                    <span class="event-date">📅 Oct 21, 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="blog">
         <div class="blog-heading">
             <h2>Blog & Tips</h2>
@@ -199,6 +237,121 @@
         </div>
     </section>
 
+    <section id="testimonials">
+        <div class="testimonial-heading">
+            <h2>Testimonials</h2>
+        </div>
+
+        <div class="testimonial-carousel-wrapper">
+            <div class="testimonial-carousel" id="testimonial-carousel">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “I joined the group at a timewhen my world was riddled with
+                        heartbreak, uncertainity, and heaviness that clouded everything.
+                        What began as a quest for 'a revenge body quietly turned into a
+                        retirn to self. Movement became medicine. Breath, a quiet anchor.
+                        <br />
+                        I was able to feel stable and endure the rollercoaster that was my
+                        life at the moment through showing up daily to achieve the
+                        challenges. In sweat, through affirmation, in the ache of the body
+                        meeting the mat, I found discipline. In commiting to and showing
+                        up for myself, I found rhythm. And with rhythm came power. With
+                        power, purpose and ability to show up the same way in my various
+                        endevaours. <br />
+                        There was no pressure to be perfect but an iinvitation to begin,
+                        and then begin again. I learened how to feel the weight without
+                        collapsing beneath it. How to get back on track if I fatltered.
+                        The girls cheering each other on, and through their own active
+                        participation was inspiration for me to also achieve the set daily
+                        and monthlygoals Grateful for the patience with each other and
+                        loving motivation.
+
+                        <br />
+                        This group has helped me rebuild. Not just my body, but my will.
+                        my direction. My relatonsip with my body, myself and others. It
+                        reminded me that I am still becoming and that is enough. I have
+                        learnt to also witness and appreciate my strength and endurance.”
+                    </p>
+                    <span>— Luna</span>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “My experience with Slay Squad has ben nothing short of amazing!
+                        Having a group of strong, like-minded accountabilty patners
+                        cheering me on has kept me motivated and consistent. I especialy
+                        love the Pilates and Yoga chalenges- they've helped me build
+                        strength and flexibility in such a graceful way. The best part?
+                        Most of the workouts don't require any equipment, so that I can
+                        easily do them from the comfort of my home. It's truly been a
+                        dream come true being part of the empowering community.”
+                    </p>
+                    <span>— Angel</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>
+                        “Being in a community such as Slay and Stretch has really helped
+                        me lock in and move more, mostly because of the accountability and
+                        motivation that comes with doing it with like-minded people. I
+                        really enjoy the 30-day yoga and Pilates challenges, and seeing
+                        that others also experience the challenges the same way keeps me
+                        going. As for the steps challenge, I have realized that it takes
+                        an insane amount of discipline to walk everyday, but seeing people
+                        put in the effort everyday challenges me to get up, go outside and
+                        walk! Grateful for the community!”
+                    </p>
+                    <span>— Tinah</span>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonial-dots"></div>
+        </div>
+    </section>
+    <!--Testimonial Modal-->
+    <div id="testimonial-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <section id="contact" class="section">
+        <div class="contact-heading">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to join the squad? Reach out below!</p>
+        </div>
+        <form class="contact-form" novalidate>
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <small class="error-message">Name is required.</small>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required />
+                <small class="error-message">Email is required.</small>
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <small class="error-message">Message is required.</small>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Slay and Stretch. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
