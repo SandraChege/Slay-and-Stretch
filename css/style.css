@@ -11,7 +11,7 @@ body {
 }
 
 .home-info {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/pilates\ oct.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -403,11 +403,108 @@ nav ul li a:focus {
     color: #800080;
 }
 
+/*RESOURCES SECTION*/
+
+#resources {
+    padding: 4rem 2rem;
+    /* max-width: 1800px; */
+    margin: auto;
+    text-align: center;
+}
+
+#resources h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #4a004e;
+}
+
+.resources-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.resources-grid a:link {
+    text-decoration: none;
+}
+
+.resource-card {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(135deg,
+            rgba(128, 0, 128, 0.8),
+            rgba(221, 160, 221, 0.8));
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+/* Resources container */
+#resources-page{
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+#resources-page .modal-content {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 520px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resource-links li {
+    margin-bottom: 1rem;
+}
+
+.resource-links a {
+    display: block;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    background: rgba(128, 0, 128, 0.08);
+    color: #4a004e;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.resource-links a:hover {
+    background: rgba(128, 0, 128, 0.2);
+    transform: translateY(-3px);
+}
+
 /*BLOG SECTION*/
 #blog {
     padding: 60px 20px;
     background: #fff;
     text-align: center;
+    background-color: #f9f9f9;
 }
 
 .blog-heading h2 {
@@ -481,7 +578,7 @@ nav ul li a:focus {
 /*TESTIMONIAL SECTION*/
 #testimonials {
     padding: 4rem 2rem;
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
     text-align: center;
 }
 
